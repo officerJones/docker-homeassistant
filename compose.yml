@@ -4,7 +4,7 @@ services:
         container_name: homeassistant
         image: ghcr.io/home-assistant/home-assistant:stable
         volumes:
-            - ha_config:/project/home_assistant/config
+            - /opt/homeassistant/config:/config 
         environment:
             - TZ=${TIMEZONE}
         restart: unless-stopped
@@ -40,7 +40,3 @@ services:
         environment: 
             - TZ=${TIMEZONE}
         restart: unless-stopped
-
-volumes:
-    ha_config:
-
