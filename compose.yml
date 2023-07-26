@@ -34,7 +34,7 @@ services:
             - /opt/zigbee2mqtt/data:/app/data 
             - /run/udev:/run/udev:ro 
         ports:
-            - 8080:8080
+            - 8099:8099
         devices:
             - /dev/ttyUSB0:/dev/ttyUSB0
         environment: 
