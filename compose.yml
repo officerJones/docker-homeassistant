@@ -40,3 +40,15 @@ services:
         environment: 
             - TZ=${TIMEZONE}
         restart: unless-stopped
+
+    hass-configurator:
+        container_name: hassconf
+        image: causticlab/hass-configurator-docker
+        volumes:
+            - /opt/hassconf/config:/config
+            - /opt/homeassistant/config:/hass-config
+        ports:
+            - 3218:3218/tcp
+        restart: unless-stopped
+        depends_on:
+            - homeassistant
