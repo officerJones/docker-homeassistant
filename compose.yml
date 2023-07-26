@@ -4,7 +4,7 @@ services:
         container_name: homeassistant
         image: ghcr.io/home-assistant/home-assistant:stable
         volumes:
-            - ha_config:/project/home_assistant/config
+            - /opt/homeassistant/config:/config 
         environment:
             - TZ=${TIMEZONE}
         restart: unless-stopped
@@ -34,13 +34,9 @@ services:
             - /opt/zigbee2mqtt/data:/app/data 
             - /run/udev:/run/udev:ro 
         ports:
-            - 8080:8080
+            - 8099:8099
         devices:
             - /dev/ttyUSB0:/dev/ttyUSB0
         environment: 
             - TZ=${TIMEZONE}
         restart: unless-stopped
-
-volumes:
-    ha_config:
-

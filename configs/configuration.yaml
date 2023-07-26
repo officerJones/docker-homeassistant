@@ -1,0 +1,26 @@
+serial:
+  port: /dev/ttyUSB0
+
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mosquitto
+  user: user
+  password: pass
+  client_id: zigbee
+
+permit_join: true
+
+frontend:
+  port: 8099
+  url: http://ip:8099
+
+devices: devices.yaml
+
+groups: groups.yaml
+
+homeassistant: true
+
+advanced:
+  pan_id: GENERATE
+  network_key: GENERATE
+
